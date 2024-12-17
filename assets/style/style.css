@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+body {
+  background: #00d0ff;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+a {
+  color: #bdbdbd;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+ul {
+  list-style-type: none;
+}
+
+/***wrapper maintain page content width***/
+.wrapper {
+  padding: 1.5rem 0;
+  margin: auto;
+  width: 85%;
+}
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/*****Picture and name*****/
+.picture {
+  height: 9rem;
+  width: 9rem;
+  background-color: #044765;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.picture img {
+  height: 9rem;
+  width: 9rem;
+}
+.name {
+  padding: 1rem 0;
+  font-size: 3rem;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  color: #000000;
+}
+
+/**On load name effect**/
+.name>span {
+  display: inline-block;
+  overflow: hidden;
+  transition: .2s transform
+}
+
+.name>span span {
+  display: inline-block;
+  transition: .5s transform cubic-bezier(.34, 1.56, .64, 1);
+}
+.name>span:nth-child(odd) {
+  transform: translateY(50%);
+}
+.name>span:nth-child(odd) span {
+  transform: translateY(-100%);
+}
+.name>span:nth-child(even) {
+  transform: translateY(-50%);
+}
+.name>span:nth-child(even) span {
+  transform: translateY(100%);
+}
+
+.name.loaded>span,
+.name.loaded>span span {
+  transform: translateY(0);
+}
+
+/*****Few personal details*****/
+.info-box {
+  width: 100%;
+  background-color: #02627a;
+  border-radius: .5rem;
+  border: 2px solid #174962;
+  padding: 1rem 0;
+  height: 4.5rem;
+  overflow: hidden;
+  position: relative;
+}
+/*if toggle btn click then add .active*/
+.info-box .toggle {
+  padding: 0.94rem;
+  width: 100%;
+  height: 3.36rem;
+  cursor: pointer;
+  position: absolute;
+  font-size: 1.3rem;
+  top: 0;
+  right: 0;
+}
+.info-box.active {
+  height: auto;
+  padding-bottom: 0;
+  overflow: visible;
+}
+/***toggle button rotate on click***/
+.info-box .toggle i {
+  float: right;
+  transition: 0.25s;
+}
+.info-box.active .toggle > i {
+  transition: 0.25s;
+  transform: rotate(-180deg);
+}
+
+/***details***/
+.details {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 95%;
+  margin: auto;
+}
+.details ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  text-align: left;
+}
+.details ul li {
+  color: #000000;
+  padding: 0.5rem;
+}
+.details b {
+  color: #00445a;
+  letter-spacing: 1.3px;
+}
+.details .about {
+  line-height: 2rem;
+  text-align: justify;
+}
+
+p {
+ font-size: 2rem;
+ font-weight: 800;
+}
+
+
+/***Project section***/
+.projects {
+  width: 100%;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  border-bottom: 1.5px solid #0000001a;
+  padding: 0;
+  text-decoration: none;
+}
+
+.project i {
+  font-size: 2rem;
+  color: #26caff;
+}
+
+.project ul {
+  overflow: hidden;
+  list-style-type: none;
+  line-height: 0.2rem;
+  margin-left: 0.8rem;
+}
+
+.project ul li {
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+}
+
+.project ul small {
+  color: #909090;
+}
+
+/*****All social media btn*****/
+.social-media {
+  width: 100%;
+}
+
+.social-media div {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+  border: 2px solid #f7f7f7;
+  background-color: #1a495b;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  display: flex;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.social-media div:hover {
+  color: #ffffff;
+  background-color: #343b45;
+}
+
+/***responsive for desktop***/
+@media only screen and (min-width: 1000px) {
+  .wrapper {
+    width: 55%;
+  }
+}
